@@ -1,7 +1,7 @@
 0x8048430 <main>:       push   %ebp
-0x8048431 <main+1>:     mov    %ebp,%esp  // 프롤로그
+0x8048431 <main+1>:     mov    %ebp,%esp 
 
-0x8048433 <main+3>:     sub    %esp,0x100 // 스택영역 100바이트 할당
+0x8048433 <main+3>:     sub    %esp,0x100 // 100바이트 할당
 
 0x8048439 <main+9>:     cmp    DWORD PTR [%ebp+8],1 // [ebp+8]은 첫번째 argument이므로 argc
 0x804843d <main+13>:    jg     0x8048456 <main+38>  // if(argc <=1) 
@@ -10,9 +10,9 @@
 0x8048444 <main+20>:    call   0x8048350 <printf> // printf( "argv error\n");
 0x8048449 <main+25>:    add    %esp,4 // 함수리턴
 
-0x804844c <main+28>:    push   0  // 아래 함수의 argument
+0x804844c <main+28>:    push   0  // 함수의 argument
 0x804844e <main+30>:    call   0x8048360 <exit> // exit(0)
-0x8048453 <main+35>:    add    %esp,4 // 함수리턴
+0x8048453 <main+35>:    add    %esp,4 // 함수 리턴
 
 0x8048456 <main+38>:    mov    %eax,DWORD PTR [%ebp+12] // [ebp+12]는 두번째 argument이므로 *argv[0]
 0x8048459 <main+41>:    add    %eax,4
